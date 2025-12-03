@@ -1,0 +1,35 @@
+{
+  "name": "weather-intelligence-frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .js,.jsx",
+    "convert:tsx": "NODE_PATH=./node_modules node ../scripts/convert-tsx-to-jsx.js 'src/**/*.{ts,tsx}'",
+    "convert:tsx:replace": "NODE_PATH=./node_modules node ../scripts/convert-tsx-to-jsx.js 'src/**/*.{ts,tsx}' --replace"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "axios": "^1.6.2",
+    "react-leaflet": "^4.2.1",
+    "leaflet": "^1.9.4",
+    "react-apexcharts": "^1.4.1",
+    "apexcharts": "^3.45.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.8",
+    "@babel/core": "^7.23.6",
+    "@babel/cli": "^7.23.4",
+    "@babel/preset-env": "^7.23.6",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
+    "@babel/plugin-transform-runtime": "^7.23.6",
+    "glob": "^10.3.10",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2"
+  }
+}

@@ -2,6 +2,8 @@
 
 A comprehensive environmental monitoring platform built with MERN stack.
 
+> **Note:** This project now uses plain JavaScript (JSX) instead of TypeScript. See the [JavaScript Migration](#javascript-migration) section for details.
+
 ## Features
 
 - 🌤️ **Real-time Weather**: Current conditions + 7-day forecast
@@ -20,10 +22,11 @@ A comprehensive environmental monitoring platform built with MERN stack.
 - Redis caching (optional)
 
 **Frontend:**
-- React 18 + Vite
+- React 18 + Vite (JavaScript/JSX)
 - Leaflet for maps
 - ApexCharts for data visualization
 - Axios for API calls
+- Babel for build tooling
 
 ## Installation
 
@@ -141,6 +144,81 @@ weather-air-service/
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+## JavaScript Migration
+
+This project has been converted from TypeScript to plain JavaScript (JSX). The conversion was performed to simplify the development workflow and reduce build complexity.
+
+### What Changed
+
+- ✅ All `.tsx` files converted to `.jsx`
+- ✅ All `.ts` utility files converted to `.js`
+- ✅ TypeScript dependencies removed from `package.json`
+- ✅ TypeScript configuration files backed up (`tsconfig.json.backup`)
+- ✅ ESLint configuration updated for JavaScript
+- ✅ Babel configuration added for future flexibility
+
+### Conversion Script
+
+The project includes a conversion script that can be used to convert TypeScript files to JavaScript:
+
+```bash
+cd frontend
+
+# Preview conversion (doesn't modify files)
+npm run convert:tsx
+
+# Convert and replace original files
+npm run convert:tsx:replace
+```
+
+### Building and Testing
+
+```bash
+# Install dependencies
+cd frontend
+npm install --legacy-peer-deps
+
+# Build the project
+npm run build
+
+# Run development server
+npm run dev
+
+# Lint code
+npm run lint
+```
+
+### Reverting to TypeScript
+
+If you need to revert to TypeScript:
+
+1. Restore TypeScript configuration:
+   ```bash
+   cd frontend
+   mv tsconfig.json.backup tsconfig.json
+   mv tsconfig.node.json.backup tsconfig.node.json
+   ```
+
+2. Reinstall TypeScript dependencies:
+   ```bash
+   npm install --save-dev typescript @types/react @types/react-dom @types/leaflet
+   ```
+
+3. Rename all `.jsx` files back to `.tsx` and `.js` files back to `.ts`:
+   ```bash
+   find src -name "*.jsx" -exec bash -c 'mv "$0" "${0%.jsx}.tsx"' {} \;
+   find src -name "*.js" -type f -exec bash -c 'mv "$0" "${0%.js}.ts"' {} \;
+   ```
+
+4. Update `index.html` to reference `main.tsx`
+
+### Notes
+
+- The conversion preserves all functionality and JSX structure
+- No runtime logic changes were made
+- Import statements without explicit extensions work without modification
+- Babel is configured to handle modern JavaScript and JSX
 
 ## License
 
