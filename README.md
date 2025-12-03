@@ -1,5 +1,7 @@
 # Weather, Climate & AQI Intelligence Platform
 
+> **Note**: This project has been converted from TypeScript to JavaScript. See [CONVERSION.md](CONVERSION.md) for details about the conversion process and how to revert if needed.
+
 A comprehensive environmental monitoring platform built with MERN stack.
 
 ## Features
@@ -44,7 +46,7 @@ npm run dev
 
 ```bash
 cd frontend
-npm install
+npm install --legacy-peer-deps
 npm run dev
 ```
 
