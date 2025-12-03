@@ -1,0 +1,16 @@
+{
+  "name": "climatee-conversion",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "convert:tsx": "node scripts/convert-tsx-to-jsx.js 'frontend/src/**/*.{ts,tsx}'",
+    "convert:tsx:replace": "node scripts/convert-tsx-to-jsx.js 'frontend/src/**/*.{ts,tsx}' --replace"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.6",
+    "@babel/preset-env": "^7.23.6",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
+    "glob": "^10.3.10"
+  }
+}
