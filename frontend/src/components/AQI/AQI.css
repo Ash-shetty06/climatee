@@ -1,0 +1,148 @@
+.aqi-display {
+  height: 100%;
+}
+
+.aqi-main {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.aqi-emoji {
+  font-size: 5rem;
+}
+
+.aqi-info {
+  flex: 1;
+}
+
+.aqi-value {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.aqi-category {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.aqi-dominant {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.aqi-station {
+  margin-top: 20px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.aqi-timestamp {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #999;
+  text-align: center;
+}
+
+.pollutants-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pollutant-item {
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.pollutant-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.pollutant-icon {
+  font-size: 1.5rem;
+}
+
+.pollutant-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.pollutant-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.pollutant-unit {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #666;
+}
+
+.pollutant-bar {
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.pollutant-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.health-icon {
+  font-size: 2rem;
+}
+
+.advisory-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.advisory-section {
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+}
+
+.advisory-section.recommendation {
+  background: #e8f5e9;
+  border-left-color: #4caf50;
+}
+
+.advisory-section h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.advisory-section p {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .aqi-main {
+    flex-direction: column;
+    text-align: center;
+  }
+}
