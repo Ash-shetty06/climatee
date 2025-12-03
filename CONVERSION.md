@@ -4,7 +4,7 @@ This document describes the TypeScript to JavaScript conversion process for the 
 
 ## Overview
 
-The repository has been successfully converted from TypeScript (.tsx/.ts) to JavaScript (.jsx/.js) while maintaining all functionality. This conversion was done using automated Babel transpilation to strip type annotations.
+The repository has been successfully converted from TypeScript (.tsx/.ts) to JavaScript (.jsx) while maintaining all functionality. This conversion was done using automated Babel transpilation to strip type annotations.
 
 ## Conversion Details
 
@@ -12,7 +12,7 @@ The repository has been successfully converted from TypeScript (.tsx/.ts) to Jav
 
 1. **Source Files**
    - All `.tsx` files converted to `.jsx`
-   - All `.ts` files converted to `.js`
+   - All `.ts` files converted to `.jsx` (all files use .jsx extension)
    - TypeScript type annotations removed
    - JSX syntax preserved
    - ES module imports/exports maintained
@@ -37,7 +37,7 @@ A conversion script is available at `scripts/convert-tsx-to-jsx.js` that can be 
 # Preview conversion (no changes made)
 npm run convert:tsx
 
-# Execute conversion (replaces .tsx/.ts with .jsx/.js)
+# Execute conversion (replaces .tsx/.ts with .jsx)
 npm run convert:tsx:replace
 ```
 
@@ -45,6 +45,7 @@ npm run convert:tsx:replace
 - Uses Babel with `@babel/preset-typescript` to strip types
 - Uses `@babel/preset-react` for JSX transformation
 - Preserves ES module syntax
+- Converts all files to `.jsx` extension
 - Automatically removes original TypeScript files when using `--replace`
 
 ## Running the Converted Project

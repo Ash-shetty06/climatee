@@ -67,7 +67,7 @@ files.forEach((filePath) => {
     const absolutePath = path.resolve(filePath);
     const sourceCode = fs.readFileSync(absolutePath, 'utf-8');
     
-    // Determine output extension
+    // Determine output extension - convert all to .jsx
     const isTsx = filePath.endsWith('.tsx');
     const isTs = filePath.endsWith('.ts');
     let outputPath;
@@ -75,7 +75,7 @@ files.forEach((filePath) => {
     if (isTsx) {
       outputPath = filePath.replace(/\.tsx$/, '.jsx');
     } else if (isTs) {
-      outputPath = filePath.replace(/\.ts$/, '.js');
+      outputPath = filePath.replace(/\.ts$/, '.jsx');
     } else {
       console.log(`⚠️  Skipping: ${filePath} (not a .ts or .tsx file)`);
       return;
