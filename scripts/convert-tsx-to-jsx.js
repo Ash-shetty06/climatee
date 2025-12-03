@@ -26,6 +26,12 @@ console.log(`Mode: ${shouldReplace ? 'REPLACE' : 'PREVIEW'}\n`);
 // Babel configuration for TypeScript removal
 const babelConfig = {
   presets: [
+    ['@babel/preset-env', {
+      modules: false, // Preserve ES modules
+      targets: {
+        esmodules: true
+      }
+    }],
     ['@babel/preset-typescript', { 
       isTSX: true, 
       allExtensions: true,
